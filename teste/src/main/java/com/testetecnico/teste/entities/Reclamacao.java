@@ -3,6 +3,9 @@ package com.testetecnico.teste.entities;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,22 +23,24 @@ public class Reclamacao implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    private String cpf;
     private String description;
     private Instant created_at;
 
     @ManyToOne
-    @JoinColumn(name = "client_cpf")
+    @JoinColumn(name = "user_id")
     private User client;
 
     public Reclamacao() {
-
     }
 
-    public Reclamacao(Long id, String title, String description, Instant created_at) {
+    public Reclamacao(Long id, String title, String cpf, String description, Instant created_at, User client) {
         this.id = id;
         this.title = title;
+        this.cpf = cpf;
         this.description = description;
         this.created_at = created_at;
+        this.client = client;
     }
 
     public Long getId() {
@@ -52,6 +57,14 @@ public class Reclamacao implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getDescription() {

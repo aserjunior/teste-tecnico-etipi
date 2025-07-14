@@ -9,27 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.testetecnico.teste.entities.User;
-import com.testetecnico.teste.services.UserService;
-
+import com.testetecnico.teste.entities.Reclamacao;
+import com.testetecnico.teste.services.ReclamacaoService;
 
 @RestController
-@RequestMapping(value = "/users")
-public class UserResource {
+@RequestMapping(value = "/reclamacoes")
+public class ReclamacaoResource {
 
     @Autowired
-    private UserService service;
+    private ReclamacaoService service;
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll() {
-        List<User> list = service.findAll();
+    public ResponseEntity<List<Reclamacao>> findAll() {
+        List<Reclamacao> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id) {
-        User obj = service.findById(id);
+    public ResponseEntity<Reclamacao> findById(@PathVariable Long id) {
+        Reclamacao obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
-    
 }
