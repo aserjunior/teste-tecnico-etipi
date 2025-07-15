@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 @Entity
@@ -78,5 +79,18 @@ public class Reclamacao implements Serializable {
 
     public void setCreatedAt(Instant created_at) {
         this.created_at = created_at;
+    }
+
+    public User getClient() {
+        return client;
+    }
+
+    public void setClient(User client) {
+        this.client = client;
+    }
+
+    @PrePersist
+    public void PrePersist() {
+        created_at = Instant.now();
     }
 }
