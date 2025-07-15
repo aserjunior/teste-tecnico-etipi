@@ -18,7 +18,7 @@ import com.testetecnico.teste.services.UserService;
 
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/api/v1/users")
 public class UserResource {
 
     @Autowired

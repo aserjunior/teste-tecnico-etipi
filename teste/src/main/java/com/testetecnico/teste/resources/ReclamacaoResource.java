@@ -18,7 +18,7 @@ import com.testetecnico.teste.entities.Reclamacao;
 import com.testetecnico.teste.services.ReclamacaoService;
 
 @RestController
-@RequestMapping(value = "/reclamacoes")
+@RequestMapping(value = "/api/v1/reclamacoes")
 public class ReclamacaoResource {
 
     @Autowired
