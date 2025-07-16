@@ -1,0 +1,81 @@
+.create-container {
+    max-width: 480px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.create-title {
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    font-weight: 700;
+}
+
+.error-message {
+    color: #d32f2f;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.create-input,
+.create-textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+}
+
+.create-input:focus,
+.create-textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.create-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.create-button:hover {
+    background-color: #0056b3;
+}
+
+.button-create {
+    background-color: #61dafb;
+    color: #282c34;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* para links */
+    display: inline-block;
+}
+
+.button-create:hover {
+    background-color: #21a1f1;
+    color: #fff;
+}
