@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 import "./Register.css";
 
 const registerUrl = "http://localhost:8080/api/v1/auth/register";
@@ -22,13 +22,11 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const user = { name, cpf, email, password };
+        const user = {name, cpf, email, password};
 
         try {
             const res = await fetch(registerUrl, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(user),
+                method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(user),
             });
 
             if (!res.ok) throw new Error("Erro ao registrar");
@@ -44,8 +42,7 @@ const Register = () => {
         }
     };
 
-    return (
-        <div className="register-container">
+    return (<div className="register-container">
             <form onSubmit={handleSubmit} className="register-form">
                 <h1 className="register-title">Cadastro de Usuário</h1>
 
@@ -95,8 +92,7 @@ const Register = () => {
 
                 <button type="submit" className="button-create">Criar</button>
             </form>
-        </div>
-    );
+        </div>);
 };
 
 export default Register;

@@ -1,6 +1,6 @@
 import './App.css';
-import { Outlet, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import {Outlet, Link} from "react-router-dom";
+import {useState, useEffect} from "react";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -10,19 +10,15 @@ function App() {
         setIsAuthenticated(!!token);
     }, []);
 
-    return (
-        <div className="app-wrapper">
+    return (<div className="app-wrapper">
             <nav className="navbar">
                 <Link to="/" className="navbar-brand">📢 Reclamação</Link>
                 <div className="navbar-links">
-                    {!token && (
-                        <>
+                    {!token && (<>
                             <Link to="/" style={linkStyle}>Login</Link>
                             <Link to="/register" style={linkStyle}>Registrar</Link>
-                        </>
-                    )}
-                    {token && (
-                        <>
+                        </>)}
+                    {token && (<>
                             <Link to="/home" style={linkStyle}>Home</Link>
                             <button
                                 onClick={() => {
@@ -33,20 +29,18 @@ function App() {
                             >
                                 Logout
                             </button>
-                        </>
-                    )}
+                        </>)}
                 </div>
             </nav>
 
             <main className="main-content">
-                <Outlet context={{ isAuthenticated, setIsAuthenticated }} />
+                <Outlet context={{isAuthenticated, setIsAuthenticated}}/>
             </main>
 
             <footer className="footer">
                 <p>© {new Date().getFullYear()} Reclamação. Todos os direitos reservados.</p>
             </footer>
-        </div>
-    );
+        </div>);
 }
 
 const linkStyle = {

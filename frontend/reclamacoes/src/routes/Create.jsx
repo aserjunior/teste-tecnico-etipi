@@ -25,10 +25,8 @@ const Create = () => {
         const fetchUserData = async () => {
             try {
                 const res = await fetch(userUrl, {
-                    method: "GET",
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                        "Content-Type": "application/json",
+                    method: "GET", headers: {
+                        Authorization: `Bearer ${token}`, "Content-Type": "application/json",
                     },
                 });
 
@@ -57,20 +55,14 @@ const Create = () => {
         }
 
         const payload = {
-            title,
-            description,
-            cpf: user.cpf,
-            clientId: user.id
+            title, description, cpf: user.cpf, clientId: user.id
         };
 
         try {
             const res = await fetch(reclamacaoUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify(payload),
+                method: "POST", headers: {
+                    "Content-Type": "application/json", Authorization: `Bearer ${token}`,
+                }, body: JSON.stringify(payload),
             });
 
             if (!res.ok) throw new Error("Erro ao criar reclamação");
@@ -82,35 +74,34 @@ const Create = () => {
         }
     };
 
-    return (
-        <div className="create-container">
-            <h2 className="create-title">Nova Reclamação</h2>
+    return (<div className="create-container">
+        <h2 className="create-title">Nova Reclamação</h2>
 
-            {error && <p className="error-message">{error}</p>}
+        {error && <p className="error-message">{error}</p>}
 
-            <form className="create-form" onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Título"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    required
-                    className="create-input"
-                />
-                <textarea
-                    placeholder="Descrição"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    rows={4}
-                    required
-                    className="create-textarea"
-                />
-                <button type="submit" className="button-create">
-                    Enviar
-                </button>
-            </form>
-        </div>
-    );
+        <form className="create-form" onSubmit={handleSubmit}>
+            <input
+                type="text"
+                placeholder="Título"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+                className="create-input"
+            />
+            <textarea
+                placeholder="Descrição"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                rows={4}
+                maxLength={500}
+                required
+                className="create-textarea"
+            />
+            <button type="submit" className="button-create">
+                Enviar
+            </button>
+        </form>
+    </div>);
 };
 
 export default Create;

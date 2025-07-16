@@ -1,9 +1,9 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {useParams, useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 import "./ReclamacaoDetails.css";
 
 const ReclamacaoDetails = () => {
-    const { id } = useParams();
+    const {id} = useParams();
     const navigate = useNavigate();
     const [reclamacao, setReclamacao] = useState(null);
     const [error, setError] = useState("");
@@ -55,7 +55,7 @@ const ReclamacaoDetails = () => {
             </div>
 
             <div className="details-item">
-                <p><strong>Descrição:</strong> {reclamacao.description}</p>
+                <p className="details-description"><strong>Descrição:</strong> {reclamacao.description}</p>
             </div>
 
             <div className="details-item">

@@ -46,7 +46,6 @@
     box-shadow: 0 0 8px rgba(25, 118, 210, 0.5);
 }
 
-/* Reutilizando o mesmo botão dos outros formulários */
 .button-create {
     background-color: #1976d2;
     color: white;
