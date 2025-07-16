@@ -80,3 +80,7 @@
 
 ---
 
+Diagrama DER
+
+
+<img width="1133" height="478" alt="image" src="https://github.com/user-attachments/assets/216d853f-dfb7-4682-add3-6d893b60969e" />
