@@ -8,13 +8,10 @@ const Create = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 
-    const [user, setUser] = useState(null); // ← guarda o usuário
+    const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-    console.log(user)
-
-    // Busca os dados do usuário autenticado
     useEffect(() => {
         const token = localStorage.getItem("authToken");
         if (!token) {
@@ -34,8 +31,6 @@ const Create = () => {
 
                 const data = await res.json()
                 setUser(data);
-                console.log(data)
-                console.log(user)
             } catch (err) {
                 setError(err.message || "Erro desconhecido.");
             }
@@ -69,7 +64,7 @@ const Create = () => {
 
             navigate("/home");
         } catch (err) {
-            console.error(err);
+            setError(err.message || "Erro desconhecido.");
             alert("Erro ao registrar reclamação");
         }
     };

@@ -9,6 +9,7 @@ const Register = () => {
     const [cpf, setCpf] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ const Register = () => {
 
             navigate("/");
         } catch (err) {
-            console.error(err);
+            setError(err.message || "Erro desconhecido");
         }
     };
 
