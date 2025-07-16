@@ -27,4 +27,9 @@ public class UserService {
     public User insert(User obj) {
         return repository.save(obj);
     }
+
+    public User findByEmail(String email) {
+        Optional<User> obj = repository.findByEmail(email);
+        return obj.orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    }
 }

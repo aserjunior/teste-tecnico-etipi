@@ -31,6 +31,10 @@ public class ReclamacaoService {
         return obj.get();
     }
 
+    public List<Reclamacao> findByUser(User user) {
+        return repository.findByClient(user);
+    }
+
     public Reclamacao insert(ReclamacaoDTO dto) {
 
         User user = userRepository.findById(dto.getClientId())
