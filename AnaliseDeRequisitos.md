@@ -65,7 +65,7 @@
 
 | Campo     | Tipo      | Descrição                 |
 |-----------|-----------|---------------------------|
-| id        | UUID / INT | Identificador do usuário  |
+| id        | LONG | Identificador do usuário  |
 | nome      | STRING    | Nome do usuário           |
 | email     | STRING    | E-mail do usuário         |
 | senha     | STRING    | Senha criptografada       |
@@ -74,11 +74,11 @@
 
 | Campo           | Tipo      | Descrição                             |
 |-----------------|-----------|----------------------------------------|
-| id              | UUID / INT | Identificador da reclamação           |
+| id              | LONG | Identificador da reclamação           |
 | titulo          | STRING    | Título da reclamação                  |
 | descricao       | TEXT      | Descrição completa da reclamação      |
 | data_criacao    | DATETIME  | Data e hora da criação                |
-| usuario_id      | UUID / INT | Chave estrangeira para `usuarios`    |
+| usuario_id      | LONG | Chave estrangeira para `usuarios`    |
 
 ---
 
