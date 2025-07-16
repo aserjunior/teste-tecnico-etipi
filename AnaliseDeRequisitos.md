@@ -28,10 +28,8 @@
 | Código | Descrição |
 |--------|-----------|
 | **RNF01** | O sistema deve utilizar autenticação segura (ex: JWT). |
-| **RNF02** | O sistema deve ter tempo de resposta inferior a 2 segundos para requisições comuns. |
-| **RNF03** | O sistema deve ser responsivo e funcionar em dispositivos móveis. |
-| **RNF04** | O banco de dados deve manter integridade e consistência dos dados. |
-| **RNF05** | O sistema deve ser implementado com backend em Spring Boot e frontend em React. |
+| **RNF02** | O banco de dados deve manter integridade e consistência dos dados. |
+| **RNF03** | O sistema deve ser implementado com backend em Spring Boot e frontend em React. |
 
 ---
 
